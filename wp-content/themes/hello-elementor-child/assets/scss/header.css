@@ -1,1 +1,5 @@
-/*# sourceMappingURL=header.css.map */
+#site-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}/*# sourceMappingURL=header.css.map */

@@ -1,6 +1,19 @@
 @import url("https://use.typekit.net/ftz7chg.css");
 
-body, p, h1, h2, h3, h4, h5, h6, a, li, span, input, textarea, button {
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+span,
+input,
+textarea,
+button {
   font-family: "futura-pt", "futura-pt-bold", sans-serif !important;
   font-weight: 400;
   font-style: normal;
@@ -15,6 +28,18 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, input, textarea, button {
 .futura-book-italic {
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
+  font-style: italic;
+}
+
+.futura-book-medium {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.futura-book-medium-italic {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -42,10 +67,91 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, input, textarea, button {
   font-style: italic;
 }
 
-html,body{
-    scroll-behavior: smooth;
+html,
+body {
+  scroll-behavior: smooth;
 }
 
-.entry-title{
-    display: none !important;
+.entry-title {
+  display: none !important;
+}
+
+// .save-date {
+//   margin-bottom: 100px;
+// }
+
+.wpcf7-response-output {
+  color: white;
+}
+
+.custom-shortcode {
+  width: 100%;
+
+  .double {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .field {
+      width: calc(50% - 5px);
+    }
+  }
+
+  input {
+    color: white;
+    background-color: #475059;
+    border-radius: 12px !important;
+    border: 0 !important;
+
+    &::placeholder {
+      color: white;
+
+    }
+  }
+
+  .wpcf7-submit {
+    text-transform: uppercase;
+    border-radius: 25px !important;
+    font-weight: 500;
+    padding: 8px 20px;
+  }
+}
+
+.button-field {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  .btn-primary {
+    font-size: 16px !important;
+    color: #323C46 !important;
+    border-radius: 25px !important;
+    text-transform: uppercase !important;
+    padding: 12px 20px;
+    border: 0 !important;
+    font-weight: 400 !important;
+    font-family: "futura-pt", "futura-pt-bold", sans-serif !important;
+    background-color: #E13C32 !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .custom-shortcode {
+    .button-field{
+      display: block;
+      a{
+        margin-bottom: 10px;
+      }
+    }
+    .double {
+      flex-direction: column;
+      gap: 0px;
+
+      .field {
+        width: 100%;
+      }
+    }
+
+  }
 }

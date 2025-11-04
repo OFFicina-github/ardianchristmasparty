@@ -1,5 +1,5 @@
 <?php
-add_action( 'wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
 
     // 1. Carica gli stili base del tema parent e child
     wp_enqueue_style(
@@ -17,16 +17,17 @@ add_action( 'wp_enqueue_scripts', function() {
     $scss_dir = get_stylesheet_directory() . '/assets/scss/';
     $scss_uri = get_stylesheet_directory_uri() . '/assets/scss/';
 
-    if ( file_exists( $scss_dir ) ) {
-        foreach ( glob( $scss_dir . '*.css' ) as $css_file ) {
-            $handle = 'child-' . basename( $css_file, '.css' );
-            wp_enqueue_style( $handle, $scss_uri . basename( $css_file ), ['hello-elementor-child-style'] );
+    if (file_exists($scss_dir)) {
+        foreach (glob($scss_dir . '*.css') as $css_file) {
+            $handle = 'child-' . basename($css_file, '.css');
+            wp_enqueue_style($handle, $scss_uri . basename($css_file), ['hello-elementor-child-style']);
         }
     }
 });
 
 
-function hello_child_enqueue_bootstrap() {
+function hello_child_enqueue_bootstrap()
+{
     // === Bootstrap CSS ===
     wp_enqueue_style(
         'bootstrap-css',
@@ -43,34 +44,35 @@ function hello_child_enqueue_bootstrap() {
         true // Carica in footer
     );
 }
-add_action( 'wp_enqueue_scripts', 'hello_child_enqueue_bootstrap' );
+add_action('wp_enqueue_scripts', 'hello_child_enqueue_bootstrap');
 
 
 function wpcontent_svg_mime_type($mimes = array())
 {
-  $mimes['svg'] = 'image/svg+xml';
-  $mimes['svgz'] = 'image/svg+xml';
-  return $mimes;
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    return $mimes;
 }
 add_filter('upload_mimes', 'wpcontent_svg_mime_type');
 
 add_action('get_footer', function () {
-  // Percorso al footer personalizzato nel child theme
-  $child_footer = get_stylesheet_directory() . '/template-parts/dynamic-footer.php';
+    // Percorso al footer personalizzato nel child theme
+    $child_footer = get_stylesheet_directory() . '/template-parts/dynamic-footer.php';
 
-  if (file_exists($child_footer)) {
-    // Disattiva il footer originale
-    remove_all_actions('hello_elementor_footer');
+    if (file_exists($child_footer)) {
+        // Disattiva il footer originale
+        remove_all_actions('hello_elementor_footer');
 
-    // Includi il tuo file
-    add_action('hello_elementor_footer', function () use ($child_footer) {
-      include $child_footer;
+        // Includi il tuo file
+        add_action('hello_elementor_footer', function () use ($child_footer) {
+            include $child_footer;
 
-    });
-  }
+        });
+    }
 }, 5);
 
-function child_theme_scripts() {
+function child_theme_scripts()
+{
     // Assicura che jQuery sia caricato
     wp_enqueue_script('jquery');
 
@@ -84,3 +86,74 @@ function child_theme_scripts() {
     );
 }
 add_action('wp_enqueue_scripts', 'child_theme_scripts');
+
+add_action('wpcf7_mail_sent', 'salva_dati_iscrizione_cf7');
+function salva_dati_iscrizione_cf7($contact_form)
+{
+    global $wpdb;
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) {
+        return;
+    }
+
+    $data = $submission->get_posted_data();
+
+    // Debug temporaneo
+
+    error_log(print_r($data, true)); // utile per verificare cosa arriva
+
+    $table_name = $wpdb->prefix . 'iscrizioni_evento';
+
+    // Assicurati che tutti i campi esistano prima di inserirli
+    $nome = isset($data['your-name']) ? sanitize_text_field($data['your-name']) : '';
+    $cognome = isset($data['cognome']) ? sanitize_text_field($data['cognome']) : '';
+    $email = isset($data['your-email']) ? sanitize_email($data['your-email']) : '';
+    $azienda = isset($data['azienda']) ? sanitize_text_field($data['azienda']) : '';
+
+    if (!empty($email)) {
+        $wpdb->insert($table_name, [
+            'email' => $email,
+            'name' => $nome,
+            'lastname' => $cognome,
+            'company' => $azienda,
+        ]);
+    }
+}
+
+function shortcode_iscrizione_evento()
+{
+    ob_start(); ?>
+    <div class="iscrizione-evento">
+        <?php echo do_shortcode('[contact-form-7 id="da5d2d3" title="Modulo di contatto 1"]'); ?>
+
+        <div class="save-date" style="display:none;">
+            <h3 class="mt-5 text-white">Save the date</h3>
+
+            <div class="button-field">
+                <!-- Pulsante Google Calendar -->
+                <a class="btn btn-primary"
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Christmas+Cocktail&dates=20251215T183000/20251215T223000&details=Ti+aspettiamo+al+Christmas+Cocktail%21&location=Galleria+de+Cristoforis%2C+1+-+Milano"
+                    target="_blank">
+                    AGGIUNGI A GOOGLE CALENDAR
+                </a>
+
+                <!-- Pulsante file .ICS -->
+                <a class="btn btn-primary"
+                    href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//OFF//IT%0ABEGIN:VEVENT%0AUID:20251215T183000-christmascocktail@offitaly.it%0ADTSTAMP:20251215T183000%0ADTSTART:20251215T183000%0ADTEND:20251215T223000%0ASUMMARY:Christmas+Cocktail%0ADESCRIPTION:Ti+aspettiamo+al+Christmas+Cocktail%21%0ALOCATION:Galleria+de+Cristoforis%2C+1+-+Milano%0AEND:VEVENT%0AEND:VCALENDAR"
+                    download="christmas-cocktail.ics">
+                    SCARICA FILE .ICS
+                </a>
+            </div>
+
+        </div>
+
+        <script>
+            document.addEventListener('wpcf7mailsent', function (event) {
+                document.querySelector('.save-date').style.display = 'block';
+            }, false);
+        </script>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('iscrizione_evento', 'shortcode_iscrizione_evento');
