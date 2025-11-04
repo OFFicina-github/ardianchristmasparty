@@ -1,0 +1,50 @@
+@import url("https://use.typekit.net/ftz7chg.css");
+body, p, h1, h2, h3, h4, h5, h6, a, li, span, input, textarea, button {
+  font-family: "futura-pt", "futura-pt-bold", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.futura-book {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.futura-book-italic {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.futura-heavy {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.futura-heavy-italic {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.futura-bold {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.futura-bold-italic {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.entry-title {
+  display: none !important;
+}/*# sourceMappingURL=style.css.map */
