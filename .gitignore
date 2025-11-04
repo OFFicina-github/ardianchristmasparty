@@ -8,12 +8,13 @@
 /wp-admin/
 /wp-content/index.php
 /wp-content/languages
-/wp-content
 /wp-content/uploads
 /wp-content/plugins/*
 /wp-content/plugins
 /wp-content/plugins/index.php
 !/wp-content/themes/hello-elementor-child/
+!/wp-content/themes/hello-elementor-child/assets/
+!/wp-content/themes/hello-elementor-child/assets/img/
 /wp-content/themes/index.php
 /wp-includes/
 /index.php
