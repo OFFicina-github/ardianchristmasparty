@@ -13,6 +13,7 @@
 /wp-content/plugins/*
 /wp-content/plugins
 /wp-content/plugins/index.php
+!/wp-content/themes/hello-elementor-child/
 /wp-content/themes/index.php
 /wp-includes/
 /index.php
