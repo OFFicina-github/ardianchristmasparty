@@ -29,4 +29,4 @@ jobs:
           port: 22
           local_path: ./wp-content/themes/
           remote_path: ${{ inputs.environment == 'staging' && '/var/www/vhosts/offdevelop.it/httpdocs/ardianchristmasparty/wp-content/themes' || '/var/www/vhosts/offdevelop.it/httpdocs/ardianchristmasparty/wp-content/themes' }}
-          delete: false
+          delete_remote_files: false
