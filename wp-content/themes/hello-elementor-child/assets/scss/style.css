@@ -192,6 +192,7 @@ body {
   cursor: pointer;
 }
 .modal .modal-header i {
+  color: white;
   font-size: 24px;
 }
 .modal .modal-body {
@@ -214,7 +215,7 @@ body {
 .modal .modal-content {
   background-color: var(--e-global-color-secondary) !important;
 }
-.modal .modal-content * {
+.modal .modal-content p, .modal .modal-content h1, .modal .modal-content h2, .modal .modal-content h3, .modal .modal-content h4, .modal .modal-content h5, .modal .modal-content h6, .modal .modal-content button, .modal .modal-content input {
   color: white !important;
 }
 .modal .modal-content .btn-close {
@@ -226,12 +227,36 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  background: rgba(70, 180, 80, 0.4);
   padding: 10px 20px;
   border-radius: 6px;
 }
 
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: #46b450;
+  background: rgba(70, 180, 80, 0.4);
+}
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+  border-color: #E13C32;
+  background: rgba(225, 59, 50, 0.3960784314);
+}
+
+.wpcf7 form.spam .wpcf7-response-output {
+  border-color: #f56e28;
+  background: rgba(245, 108, 40, 0.5098039216);
+  /* Orange */
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #ffb900;
+  background: rgba(255, 187, 0, 0.3882352941);
+}
+
 .wpcf7-not-valid-tip {
+  color: #E13C32 !important;
   text-align: left;
   padding-top: 5px;
   padding-left: 16px;

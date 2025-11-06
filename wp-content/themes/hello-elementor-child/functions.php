@@ -100,8 +100,6 @@ function salva_dati_iscrizione_cf7($contact_form)
 
     // Debug temporaneo
 
-
-
     error_log(print_r($data, true)); // utile per verificare cosa arriva
 
     $table_name = $wpdb->prefix . 'iscrizioni_evento';
@@ -174,3 +172,32 @@ function shortcode_iscrizione_evento_non_partecipa()
     return ob_get_clean();
 }
 add_shortcode('iscrizione_evento_non_partecipa', 'shortcode_iscrizione_evento_non_partecipa');
+
+
+add_filter('wpcf7_validate_email*', 'controlla_email_gia_inserita', 10, 2);
+
+function controlla_email_gia_inserita($result, $tag) {
+    global $wpdb;
+
+    $name = $tag->name; // es. "your-email"
+
+    // Recupera il valore inviato
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) return $result;
+
+    $data = $submission->get_posted_data();
+    if (!isset($data[$name])) return $result;
+
+    $email = sanitize_email($data[$name]);
+    $table_name = $wpdb->prefix . 'iscrizioni_evento';
+
+    // Controlla se l'email è già in DB
+    $exists = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $table_name WHERE email = %s", $email));
+
+    if ($exists > 0) {
+        // Blocca invio + messaggio di errore personalizzato
+        $result->invalidate($tag, "Questa email risulta già registrata per l’evento.");
+    }
+
+    return $result;
+}

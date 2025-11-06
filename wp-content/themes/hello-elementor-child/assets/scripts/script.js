@@ -117,22 +117,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 document.addEventListener('wpcf7mailsent', function (event) {
-    const formId = event.detail.contactFormId; 
-    console.log(formId)
-    // Form NON PARTECIPO (es. ID 747)
+    const formId = event.detail.contactFormId;
+
     if (formId === 14 || formId === 711) {
         document.querySelector('.save-date')?.style.setProperty('display', 'block');
         document.querySelector('.rsvp-header')?.style.setProperty('display', 'none');
         document.querySelector('.form-invitation')?.style.setProperty('display', 'none');
         document.getElementById('non-partecipo')?.style.setProperty('display', 'none');
         document.querySelector('.partecipo-block')?.classList.add('invert-block');
-        
     }
 
-    // Form PARTECIPO (es. ID 748)
     else if (formId === 747) {
         document.querySelector('.hide-after')?.style.setProperty('display', 'none');
         document.querySelector('.show-after')?.style.setProperty('display', 'block');
@@ -140,4 +135,18 @@ document.addEventListener('wpcf7mailsent', function (event) {
         document.getElementById('partecipo')?.style.setProperty('display', 'none');
     }
     document.querySelector('.button-container-box')?.classList.add('justify-content-center');
+});
+
+document.addEventListener('wpcf7invalid', function (event) {
+    const invalid = event.detail.apiResponse.invalid_fields || [];
+    const emailError = invalid.find(f => f.field === 'your-email' && f.message.includes('già registrata'));
+
+    if (emailError) {
+        // sostituisci il messaggio globale
+        const responses = event.target.querySelectorAll('.wpcf7-response-output');
+        responses.forEach(response => {
+            response.textContent = 'Questa email risulta già registrata per l’evento.';
+            response.classList.add('email-duplicate');
+        });
+    }
 });
