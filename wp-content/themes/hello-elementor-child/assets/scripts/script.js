@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('wpcf7mailsent', function (event) {
-    const formId = event.detail.contactFormId; // ← ID numerico del form CF7
+    const formId = event.detail.contactFormId; 
     console.log(formId)
     // Form NON PARTECIPO (es. ID 747)
-    if (formId === 14) {
+    if (formId === 14 || formId === 711) {
         document.querySelector('.save-date')?.style.setProperty('display', 'block');
         document.querySelector('.rsvp-header')?.style.setProperty('display', 'none');
         document.querySelector('.form-invitation')?.style.setProperty('display', 'none');
