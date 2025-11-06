@@ -29,6 +29,64 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 ?>
 
 
+<!-- 💬 Modale Partecipo-->
+<div class="modal fade" id="PartecipoModal" tabindex="-1" aria-labelledby="PartecipoLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header close" data-bs-dismiss="modal" aria-label="Chiudi">
+				<i class="fa fas fa-close"> </i>
+			</div>
+
+			<div class="modal-body body-partecipa">
+
+				<div class="rsvp-header">
+					<h2>R.S.V.P.</h2>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/separe.svg" alt="Logo" class="mb-5 mt-4" style="max-width: 220px;">
+				</div>
+
+				<?php echo do_shortcode('[iscrizione_evento]'); ?>
+
+			</div>
+			
+			<!-- 
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+				<button type="button" class="btn btn-danger">Conferma</button>
+			</div> 
+			-->
+
+		</div>
+	</div>
+</div>
+
+
+<!-- 💬 Modale  NON PARTECIPO-->
+<div class="modal fade" id="nonPartecipoModal" tabindex="-1" aria-labelledby="nonPartecipoLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header close" data-bs-dismiss="modal" aria-label="Chiudi">
+				<i class="fa fas fa-close"> </i>
+			</div>
+
+			<div class="modal-body body-partecipa modal-body-close">
+
+				<div class="hide-after">
+					<h2>Ci dispiace non vederti!</h2>
+					<h3>Compila il modulo per confermare la tua assenza</h3>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/separe.svg" alt="Logo" class="mb-5 mt-4" style="max-width: 220px;">
+				</div>
+
+				<?php echo do_shortcode('[iscrizione_evento_non_partecipa]'); ?>
+			
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
 
 <footer id="site-footer" class="site-footer dynamic-footer <?php echo esc_attr($footer_class); ?>">
 	<div class="footer-inner gap-4 gap-md-0">
@@ -59,10 +117,14 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 			</div>
 			<div>
 				<p class="small mb-3">Lorem ipsum </p>
-				<p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+					voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-				
-				
+
+
 		</div>
 
 	</div>

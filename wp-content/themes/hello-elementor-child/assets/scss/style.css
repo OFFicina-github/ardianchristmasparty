@@ -82,6 +82,13 @@ body {
 .custom-shortcode {
   width: 100%;
 }
+.custom-shortcode .form-invitation input[type=submit]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.custom-shortcode .wpcf7-spinner {
+  position: absolute;
+}
 .custom-shortcode .double {
   display: flex;
   flex-direction: row;
@@ -111,11 +118,11 @@ body {
 
 .button-field {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
 }
 .button-field .btn-primary {
-  font-size: 16px !important;
+  font-size: 20px !important;
   color: #323C46 !important;
   border-radius: 25px !important;
   text-transform: uppercase !important;
@@ -124,6 +131,9 @@ body {
   font-weight: 400 !important;
   font-family: "futura-pt", "futura-pt-bold", sans-serif !important;
   background-color: #E13C32 !important;
+}
+.button-field .btn-primary:hover {
+  color: #E13C32 !important;
 }
 
 @media screen and (max-width: 1000px) {
@@ -140,4 +150,114 @@ body {
   .custom-shortcode .double .field {
     width: 100%;
   }
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn,
+.btn-primary {
+  padding: 14px 24px !important;
+  background-color: var(--e-global-color-secondary) !important;
+  font-size: 18px !important;
+  line-height: 1em !important;
+  fill: var(--e-global-color-b543eca) !important;
+  color: var(--e-global-color-b543eca) !important;
+  border-radius: 4px 4px 4px 4px !important;
+  border: 0 !important;
+  transition: all 0.3s ease-in-out;
+  font-size: 24px !important;
+}
+.btn:hover,
+.btn-primary:hover {
+  border: 0 !important;
+  background-color: white !important;
+  color: #E13C32 !important;
+}
+.btn:focus, .btn:focus-visible,
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  box-shadow: none;
+}
+
+.modal .modal-header {
+  border: 0 !important;
+}
+.modal .modal-header {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  cursor: pointer;
+}
+.modal .modal-header i {
+  font-size: 24px;
+}
+.modal .modal-body {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.modal .modal-body.body-partecipa {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.modal .modal-body h3 {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+.modal .modal-content {
+  background-color: var(--e-global-color-secondary) !important;
+}
+.modal .modal-content * {
+  color: white !important;
+}
+.modal .modal-content .btn-close {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+.modal .modal-content .wpcf7-response-output {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  background: rgba(70, 180, 80, 0.4);
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.wpcf7-not-valid-tip {
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal .modal-header {
+    border: 0 !important;
+  }
+  .modal .modal-header {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    cursor: pointer;
+  }
+  .modal .modal-header i {
+    font-size: 24px;
+  }
+  .modal .modal-body {
+    min-height: 60vh;
+  }
+  .modal .modal-body.body-partecipa {
+    max-width: 100%;
+  }
+}
+.invert-block {
+  display: flex;
+  flex-direction: column-reverse;
 }/*# sourceMappingURL=style.css.map */

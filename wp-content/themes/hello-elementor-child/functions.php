@@ -100,6 +100,8 @@ function salva_dati_iscrizione_cf7($contact_form)
 
     // Debug temporaneo
 
+
+
     error_log(print_r($data, true)); // utile per verificare cosa arriva
 
     $table_name = $wpdb->prefix . 'iscrizioni_evento';
@@ -109,6 +111,7 @@ function salva_dati_iscrizione_cf7($contact_form)
     $cognome = isset($data['cognome']) ? sanitize_text_field($data['cognome']) : '';
     $email = isset($data['your-email']) ? sanitize_email($data['your-email']) : '';
     $azienda = isset($data['azienda']) ? sanitize_text_field($data['azienda']) : '';
+    $partecipa = isset($data['partecipa']) && sanitize_text_field($data['partecipa']) === 'true' ? 'si' : 'no';
 
     if (!empty($email)) {
         $wpdb->insert($table_name, [
@@ -116,18 +119,21 @@ function salva_dati_iscrizione_cf7($contact_form)
             'name' => $nome,
             'lastname' => $cognome,
             'company' => $azienda,
+            'partecipa' => $partecipa,
         ]);
     }
 }
 
 function shortcode_iscrizione_evento()
 {
-    ob_start(); ?>
-    <div class="iscrizione-evento">
-        <?php echo do_shortcode('[contact-form-7 id="da5d2d3" title="Modulo di contatto 1"]'); ?>
 
-        <div class="save-date" style="display:none;">
-            <h3 class="mt-5 text-white">Save the date</h3>
+    ob_start(); ?>
+    <div class="iscrizione-evento custom-shortcode partecipo-block">
+
+        <?php echo do_shortcode('[contact-form-7 id="748" title="Modulo Partecipa"]'); ?>
+
+        <div class="save-date mb-5  " style="display:none;">
+            <h2 class="mt-0 mb-5 text-white">Save the date</h2>
 
             <div class="button-field">
                 <!-- Pulsante Google Calendar -->
@@ -144,16 +150,27 @@ function shortcode_iscrizione_evento()
                     SCARICA FILE .ICS
                 </a>
             </div>
-
         </div>
-
-        <script>
-            document.addEventListener('wpcf7mailsent', function (event) {
-                document.querySelector('.save-date').style.display = 'block';
-            }, false);
-        </script>
     </div>
     <?php
     return ob_get_clean();
 }
 add_shortcode('iscrizione_evento', 'shortcode_iscrizione_evento');
+
+function shortcode_iscrizione_evento_non_partecipa()
+{
+    ob_start(); ?>
+    <div class="iscrizione-evento custom-shortcode non-partecipo-block">
+
+        <?php echo do_shortcode('[contact-form-7 id="747" title="Modulo NON Partecipa"]'); ?>
+
+        <div class="show-after mb-3" style="display:none;">
+            <h2 class="mt-0  text-white">Grazie per la conferma</h2>
+            <h3 class="text-white">Il team di Ardian ti augura buone feste.<br>
+                ci vediamo l'anno prossimo </h3>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('iscrizione_evento_non_partecipa', 'shortcode_iscrizione_evento_non_partecipa');

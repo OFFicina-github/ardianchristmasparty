@@ -76,16 +76,21 @@ body {
   display: none !important;
 }
 
-// .save-date {
-//   margin-bottom: 100px;
-// }
-
 .wpcf7-response-output {
   color: white;
 }
 
 .custom-shortcode {
   width: 100%;
+
+  .form-invitation input[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .wpcf7-spinner {
+    position: absolute;
+  }
 
   .double {
     display: flex;
@@ -119,11 +124,11 @@ body {
 
 .button-field {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
 
   .btn-primary {
-    font-size: 16px !important;
+    font-size: 20px !important;
     color: #323C46 !important;
     border-radius: 25px !important;
     text-transform: uppercase !important;
@@ -132,18 +137,24 @@ body {
     font-weight: 400 !important;
     font-family: "futura-pt", "futura-pt-bold", sans-serif !important;
     background-color: #E13C32 !important;
+
+    &:hover {
+      color: #E13C32 !important;
+    }
   }
 }
 
 @media screen and (max-width: 1000px) {
 
   .custom-shortcode {
-    .button-field{
+    .button-field {
       display: block;
-      a{
+
+      a {
         margin-bottom: 10px;
       }
     }
+
     .double {
       flex-direction: column;
       gap: 0px;
@@ -154,4 +165,136 @@ body {
     }
 
   }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn,
+.btn-primary {
+  padding: 14px 24px !important;
+  background-color: var(--e-global-color-secondary) !important;
+  font-size: 18px !important;
+  line-height: 1em !important;
+  fill: var(--e-global-color-b543eca) !important;
+  color: var(--e-global-color-b543eca) !important;
+  border-radius: 4px 4px 4px 4px !important;
+  border: 0 !important;
+  transition: all 0.3s ease-in-out;
+  font-size: 24px !important;
+
+  &:hover {
+    border: 0 !important;
+    background-color: white !important;
+    color: #E13C32 !important;
+  }
+
+  &:focus,
+  &:focus-visible {
+    box-shadow: none;
+  }
+}
+
+.modal {
+
+  .modal-header {
+    border: 0 !important;
+  }
+
+  .modal-header {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    cursor: pointer;
+
+    i {
+      font-size: 24px;
+    }
+  }
+
+  .modal-body {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &.body-partecipa {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-size: 24px !important;
+      font-weight: 400 !important;
+      line-height: 1 !important;
+    }
+  }
+
+  .modal-content {
+    background-color: var(--e-global-color-secondary) !important;
+
+    * {
+      color: white !important;
+    }
+
+    .btn-close {
+      background-color: transparent !important;
+      border: 0 !important;
+    }
+
+    .wpcf7-response-output {
+      margin: 0;
+      width: fit-content;
+      margin: 0 auto;
+      background: #46b45066;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+  }
+}
+
+.wpcf7-not-valid-tip {
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+
+    .modal-header {
+      border: 0 !important;
+    }
+
+    .modal-header {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      cursor: pointer;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    .modal-body {
+      min-height: 60vh;
+
+      &.body-partecipa {
+        max-width: 100%;
+      }
+
+    }
+  }
+
+}
+
+.invert-block{
+  display: flex;
+  flex-direction: column-reverse;
 }
