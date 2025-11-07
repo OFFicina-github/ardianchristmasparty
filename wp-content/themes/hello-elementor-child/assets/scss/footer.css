@@ -14,6 +14,9 @@
 .site-footer .logo-footer {
   width: 206px !important;
 }
+.site-footer a:hover {
+  color: var(--e-global-color-primary) !important;
+}
 
 #menu-menu-principale-3 {
   list-style-type: none;

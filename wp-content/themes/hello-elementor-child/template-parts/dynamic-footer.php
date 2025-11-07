@@ -109,20 +109,21 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/x.svg" alt="">
 				</a>
 				<a href="https://www.linkedin.com/company/ardian/" target="_blank">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/instagram.svg" alt="">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/linkedin.svg" alt="">
 				</a>
 				<a href="https://www.youtube.com/channel/UCHLb3w4x0V6LnV7794l8Uow" target="_blank">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/youtube.svg" alt="">
 				</a>
 			</div>
-			<div>
+
+			<!-- <div>
 				<p class="small mb-3">Lorem ipsum </p>
 				<p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 					ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
 					voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+			</div> -->
 
 
 		</div>

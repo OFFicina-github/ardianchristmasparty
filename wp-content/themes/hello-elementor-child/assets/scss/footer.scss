@@ -15,6 +15,12 @@
     .logo-footer{
         width: 206px !important;
     }
+
+    a{
+        &:hover{
+            color: var( --e-global-color-primary ) !important;
+        }
+    }
 }
 
 #menu-menu-principale-3{
