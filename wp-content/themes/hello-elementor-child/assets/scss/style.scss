@@ -72,6 +72,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.home{
+  padding-right: 0 !important;
+}
+
 .entry-title {
   display: none !important;
 }
@@ -177,22 +181,21 @@ body {
   .btn,
   .btn-primary {
     padding: 14px 24px !important;
-    background-color: var(--e-global-color-secondary) !important;
+    background-color: transparent !important;
     font-size: 18px !important;
     line-height: 1em !important;
     fill: var(--e-global-color-b543eca) !important;
     color: var(--e-global-color-b543eca) !important;
-    border-radius: 4px 4px 4px 4px !important;
-    border: 0 !important;
+    border-radius: 25px !important;
+    border: 1px solid white !important;
     transition: all 0.3s ease-in-out;
-    font-size: 32px !important;
+    font-size: 24px !important;
     text-transform: uppercase;
     font-weight: 500 !important;
     min-width: 280px;
 
 
     &:hover {
-      border: 0 !important;
       background-color: white !important;
       color: #E13C32 !important;
     }
@@ -348,7 +351,7 @@ body {
 // Inizio override modale bianco
 .modal .modal-content {
   background-color: white !important;
-  min-height: 80vh;
+  min-height: 66vh;
 }
 
 .modal .modal-content p,
