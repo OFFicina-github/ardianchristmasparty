@@ -123,7 +123,7 @@ body {
 }
 .button-field .btn-primary {
   font-size: 20px !important;
-  color: #323C46 !important;
+  color: white !important;
   border-radius: 25px !important;
   text-transform: uppercase !important;
   padding: 12px 20px;
@@ -133,13 +133,10 @@ body {
   background-color: #E13C32 !important;
 }
 .button-field .btn-primary:hover {
-  color: #E13C32 !important;
+  color: white !important;
 }
 
 @media screen and (max-width: 1000px) {
-  .custom-shortcode .button-field {
-    display: block;
-  }
   .custom-shortcode .button-field a {
     margin-bottom: 10px;
   }
@@ -157,8 +154,8 @@ body {
   height: 100%;
 }
 
-.btn,
-.btn-primary {
+.btn-container .btn,
+.btn-container .btn-primary {
   padding: 14px 24px !important;
   background-color: var(--e-global-color-secondary) !important;
   font-size: 18px !important;
@@ -168,17 +165,20 @@ body {
   border-radius: 4px 4px 4px 4px !important;
   border: 0 !important;
   transition: all 0.3s ease-in-out;
-  font-size: 24px !important;
+  font-size: 32px !important;
+  text-transform: uppercase;
+  font-weight: 500 !important;
+  min-width: 280px;
 }
-.btn:hover,
-.btn-primary:hover {
+.btn-container .btn:hover,
+.btn-container .btn-primary:hover {
   border: 0 !important;
   background-color: white !important;
   color: #E13C32 !important;
 }
-.btn:focus, .btn:focus-visible,
-.btn-primary:focus,
-.btn-primary:focus-visible {
+.btn-container .btn:focus, .btn-container .btn:focus-visible,
+.btn-container .btn-primary:focus,
+.btn-container .btn-primary:focus-visible {
   box-shadow: none;
 }
 
@@ -215,7 +215,15 @@ body {
 .modal .modal-content {
   background-color: var(--e-global-color-secondary) !important;
 }
-.modal .modal-content p, .modal .modal-content h1, .modal .modal-content h2, .modal .modal-content h3, .modal .modal-content h4, .modal .modal-content h5, .modal .modal-content h6, .modal .modal-content button, .modal .modal-content input {
+.modal .modal-content p,
+.modal .modal-content h1,
+.modal .modal-content h2,
+.modal .modal-content h3,
+.modal .modal-content h4,
+.modal .modal-content h5,
+.modal .modal-content h6,
+.modal .modal-content button,
+.modal .modal-content input {
   color: white !important;
 }
 .modal .modal-content .btn-close {
@@ -229,6 +237,10 @@ body {
   margin: 0 auto;
   padding: 10px 20px;
   border-radius: 6px;
+}
+
+.wpcf7 .wpcf7-response-output {
+  color: black;
 }
 
 .wpcf7 form.sent .wpcf7-response-output {
@@ -285,4 +297,28 @@ body {
 .invert-block {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.modal .modal-content {
+  background-color: white !important;
+  min-height: 80vh;
+}
+
+.modal .modal-content p,
+.modal .modal-content h1,
+.modal .modal-content h2,
+.modal .modal-content h3,
+.modal .modal-content h4,
+.modal .modal-content h5,
+.modal .modal-content h6,
+.modal .modal-content button,
+.modal .modal-header i {
+  color: var(--e-global-color-primary) !important;
+}
+
+.elementor-kit-10 button,
+.elementor-kit-10 input[type=button],
+.elementor-kit-10 input[type=submit],
+.elementor-kit-10 .elementor-button {
+  color: white !important;
 }/*# sourceMappingURL=style.css.map */

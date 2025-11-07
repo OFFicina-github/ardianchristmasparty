@@ -131,7 +131,7 @@ function shortcode_iscrizione_evento()
         <?php echo do_shortcode('[contact-form-7 id="748" title="Modulo Partecipa"]'); ?>
 
         <div class="save-date mb-5  " style="display:none;">
-            <h2 class="mt-0 mb-5 text-white">Save the date</h2>
+            <h2 class="mt-0 mb-5 text-white">SAVE THE DATE</h2>
 
             <div class="button-field">
                 <!-- Pulsante Google Calendar -->

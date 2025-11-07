@@ -129,7 +129,7 @@ body {
 
   .btn-primary {
     font-size: 20px !important;
-    color: #323C46 !important;
+    color: white !important;
     border-radius: 25px !important;
     text-transform: uppercase !important;
     padding: 12px 20px;
@@ -139,7 +139,7 @@ body {
     background-color: #E13C32 !important;
 
     &:hover {
-      color: #E13C32 !important;
+      color: white !important;
     }
   }
 }
@@ -148,7 +148,6 @@ body {
 
   .custom-shortcode {
     .button-field {
-      display: block;
 
       a {
         margin-bottom: 10px;
@@ -173,30 +172,38 @@ body {
   height: 100%;
 }
 
-.btn,
-.btn-primary {
-  padding: 14px 24px !important;
-  background-color: var(--e-global-color-secondary) !important;
-  font-size: 18px !important;
-  line-height: 1em !important;
-  fill: var(--e-global-color-b543eca) !important;
-  color: var(--e-global-color-b543eca) !important;
-  border-radius: 4px 4px 4px 4px !important;
-  border: 0 !important;
-  transition: all 0.3s ease-in-out;
-  font-size: 24px !important;
+.btn-container {
 
-  &:hover {
+  .btn,
+  .btn-primary {
+    padding: 14px 24px !important;
+    background-color: var(--e-global-color-secondary) !important;
+    font-size: 18px !important;
+    line-height: 1em !important;
+    fill: var(--e-global-color-b543eca) !important;
+    color: var(--e-global-color-b543eca) !important;
+    border-radius: 4px 4px 4px 4px !important;
     border: 0 !important;
-    background-color: white !important;
-    color: #E13C32 !important;
-  }
+    transition: all 0.3s ease-in-out;
+    font-size: 32px !important;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    min-width: 280px;
 
-  &:focus,
-  &:focus-visible {
-    box-shadow: none;
+
+    &:hover {
+      border: 0 !important;
+      background-color: white !important;
+      color: #E13C32 !important;
+    }
+
+    &:focus,
+    &:focus-visible {
+      box-shadow: none;
+    }
   }
 }
+
 
 .modal {
 
@@ -239,7 +246,15 @@ body {
   .modal-content {
     background-color: var(--e-global-color-secondary) !important;
 
-    p, h1,h2,h3,h4,h5,h6, button, input {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    input {
       color: white !important;
     }
 
@@ -258,6 +273,9 @@ body {
   }
 }
 
+.wpcf7 .wpcf7-response-output {
+  color: black;
+}
 
 .wpcf7 form.sent .wpcf7-response-output {
   border-color: #46b450;
@@ -324,3 +342,32 @@ body {
   display: flex;
   flex-direction: column-reverse;
 }
+
+
+
+// Inizio override modale bianco
+.modal .modal-content {
+  background-color: white !important;
+  min-height: 80vh;
+}
+
+.modal .modal-content p,
+.modal .modal-content h1,
+.modal .modal-content h2,
+.modal .modal-content h3,
+.modal .modal-content h4,
+.modal .modal-content h5,
+.modal .modal-content h6,
+.modal .modal-content button,
+.modal .modal-header i {
+  color: var(--e-global-color-primary) !important;
+}
+
+.elementor-kit-10 button,
+.elementor-kit-10 input[type="button"],
+.elementor-kit-10 input[type="submit"],
+.elementor-kit-10 .elementor-button {
+  color:  white !important;
+}
+// Fine override modale bianco
+

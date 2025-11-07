@@ -31,7 +31,7 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 
 <!-- 💬 Modale Partecipo-->
 <div class="modal fade" id="PartecipoModal" tabindex="-1" aria-labelledby="PartecipoLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
 
 			<div class="modal-header close" data-bs-dismiss="modal" aria-label="Chiudi">
@@ -63,7 +63,7 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 
 <!-- 💬 Modale  NON PARTECIPO-->
 <div class="modal fade" id="nonPartecipoModal" tabindex="-1" aria-labelledby="nonPartecipoLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
 
 			<div class="modal-header close" data-bs-dismiss="modal" aria-label="Chiudi">
