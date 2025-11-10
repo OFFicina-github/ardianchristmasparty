@@ -336,4 +336,10 @@ body {
 .elementor-kit-10 input[type=submit],
 .elementor-kit-10 .elementor-button {
   color: white !important;
+}
+
+@media screen and (max-width: 1000px) {
+  #site-header {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
