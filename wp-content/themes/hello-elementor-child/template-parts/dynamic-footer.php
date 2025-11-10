@@ -42,6 +42,7 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 
 				<div class="rsvp-header">
 					<h2>R.S.V.P.</h2>
+					<h3>Compila il modulo per confermare la tua presenza</h3>
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/separe.svg" alt="Logo"
 						class="mb-5 mt-4" style="max-width: 220px;">
 				</div>
@@ -74,7 +75,7 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 			<div class="modal-body body-partecipa modal-body-close">
 
 				<div class="hide-after">
-					<h2>Ci dispiace non vederti!</h2>
+					<h2>R.S.V.P.</h2>
 					<h3>Compila il modulo per confermare la tua assenza</h3>
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/separe.svg" alt="Logo"
 						class="mb-5 mt-4" style="max-width: 220px;">
