@@ -108,14 +108,16 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 					</p>
 				</div>
 
-				<div class="col-12 col-md-5 mt-2 mt-md-0 text-left text-md-end">
+				<!-- <div class="col-12 col-md-5 mt-2 mt-md-0 text-left text-md-end">
 					<p class="small mb-2">
 						<a href="#" style="text-decoration: underline;" target="_blank">Privacy Policy</a>
 					</p>
 					<p class="small mb-0">
 						<a href="#" style="text-decoration: underline;" target="_blank">Cookie Policy</a>
 					</p>
-				</div>
+				</div> -->
+
+
 			</div>
 		</div>
 

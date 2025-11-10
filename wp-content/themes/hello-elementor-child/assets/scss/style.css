@@ -81,6 +81,8 @@ body {
 
 .wpcf7-response-output {
   color: white;
+  border: 0 !important;
+  font-size: 13px !important;
 }
 
 .custom-shortcode {
@@ -124,9 +126,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 280px;
+  margin: 0 auto;
 }
 .button-field .btn-primary {
-  font-size: 20px !important;
+  font-size: 16px !important;
   color: white !important;
   border-radius: 25px !important;
   text-transform: uppercase !important;
@@ -162,7 +166,6 @@ body {
 .btn-container .btn-primary {
   padding: 14px 24px !important;
   background-color: transparent !important;
-  font-size: 18px !important;
   line-height: 1em !important;
   fill: var(--e-global-color-b543eca) !important;
   color: var(--e-global-color-b543eca) !important;
@@ -173,6 +176,12 @@ body {
   text-transform: uppercase;
   font-weight: 500 !important;
   min-width: 280px;
+}
+@media screen and (max-width: 768px) {
+  .btn-container .btn,
+  .btn-container .btn-primary {
+    font-size: 18px !important;
+  }
 }
 .btn-container .btn:hover,
 .btn-container .btn-primary:hover {
@@ -185,6 +194,9 @@ body {
   box-shadow: none;
 }
 
+.modal .modal-dialog {
+  max-width: 900px !important;
+}
 .modal .modal-header {
   border: 0 !important;
 }
