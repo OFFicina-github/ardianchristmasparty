@@ -83,7 +83,8 @@ body {
 .wpcf7-response-output {
   color: white;
   border: 0 !important;
-  font-size: 13px !important;
+  font-size: 18px !important;
+  padding: 30px;
 }
 
 .custom-shortcode {
@@ -340,7 +341,10 @@ body {
 }
 
 /* Stati base */
-.block, .wpcf7, .save-date, .show-after {
+.block,
+.wpcf7,
+.save-date,
+.show-after {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
@@ -371,7 +375,8 @@ body {
   h1 {
     padding: 0 10px !important;
   }
-  .btn-container .btn, .btn-container .btn-primary {
+  .btn-container .btn,
+  .btn-container .btn-primary {
     min-width: 220px !important;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -148,7 +148,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
                 });
             }, 500); // deve corrispondere a transition: 0.6s
 
-        }, 1000); // tempo di attesa prima del fade-out, in ms
+        }, 500); // tempo di attesa prima del fade-out, in ms
 
 
     }
@@ -181,7 +181,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
                 });
             }, 500); // deve corrispondere a transition: 0.6s
 
-        }, 1000); // tempo di attesa prima del fade-out, in ms
+        }, 500); // tempo di attesa prima del fade-out, in ms
 
     }
     document.querySelector('.button-container-box')?.classList.add('justify-content-center');
