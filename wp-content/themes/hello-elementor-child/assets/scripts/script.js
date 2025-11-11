@@ -132,23 +132,23 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
         // Mostra wpcf7 per alcuni secondi
         setTimeout(() => {
-        // Inizia fade-out
-        wpcf7.classList.add('fade-out');
+            // Inizia fade-out
+            wpcf7.classList.add('fade-out');
 
-        // Dopo la durata della transizione (600ms), nascondi il blocco
-        setTimeout(() => {
-            wpcf7.classList.add('hidden');
+            // Dopo la durata della transizione (600ms), nascondi il blocco
+            setTimeout(() => {
+                wpcf7.classList.add('hidden');
 
-            // Mostra save-date con effetto fade-in
-            saveDate.classList.remove('hidden');
-            requestAnimationFrame(() => {
-            // saveDate.classList.add('fade-out');
-            saveDate.classList.remove('fade-out');
-            
-            });
-        }, 500); // deve corrispondere a transition: 0.6s
+                // Mostra save-date con effetto fade-in
+                saveDate.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    // saveDate.classList.add('fade-out');
+                    saveDate.classList.remove('fade-out');
 
-        }, 3000); // tempo di attesa prima del fade-out, in ms
+                });
+            }, 500); // deve corrispondere a transition: 0.6s
+
+        }, 4000); // tempo di attesa prima del fade-out, in ms
 
 
     }
@@ -165,23 +165,23 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
         // Mostra wpcf7 per alcuni secondi
         setTimeout(() => {
-        // Inizia fade-out
-        wpcf7.classList.add('fade-out');
+            // Inizia fade-out
+            wpcf7.classList.add('fade-out');
 
-        // Dopo la durata della transizione (600ms), nascondi il blocco
-        setTimeout(() => {
-            wpcf7.classList.add('hidden');
+            // Dopo la durata della transizione (600ms), nascondi il blocco
+            setTimeout(() => {
+                wpcf7.classList.add('hidden');
 
-            // Mostra save-date con effetto fade-in
-            showAfter.classList.remove('hidden');
-            requestAnimationFrame(() => {
-            // showAfter.classList.add('fade-out');
-            showAfter.classList.remove('fade-out');
-            
-            });
-        }, 500); // deve corrispondere a transition: 0.6s
+                // Mostra save-date con effetto fade-in
+                showAfter.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    // showAfter.classList.add('fade-out');
+                    showAfter.classList.remove('fade-out');
 
-        }, 3000); // tempo di attesa prima del fade-out, in ms
+                });
+            }, 500); // deve corrispondere a transition: 0.6s
+
+        }, 4000); // tempo di attesa prima del fade-out, in ms
 
     }
     document.querySelector('.button-container-box')?.classList.add('justify-content-center');
