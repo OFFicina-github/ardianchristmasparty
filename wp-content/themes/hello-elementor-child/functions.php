@@ -130,7 +130,7 @@ function shortcode_iscrizione_evento()
 
         <?php echo do_shortcode('[contact-form-7 id="748" title="Modulo Partecipa"]'); ?>
 
-        <div class="save-date mb-4 pb-2" style="display:none;">
+        <div class="save-date mb-4 pb-2 hidden fade-out" >
             <h2 class="mt-0 mb-4 pb-2 text-white">SAVE THE DATE</h2>
 
             <div class="button-field">
@@ -162,7 +162,7 @@ function shortcode_iscrizione_evento_non_partecipa()
 
         <?php echo do_shortcode('[contact-form-7 id="747" title="Modulo NON Partecipa"]'); ?>
 
-        <div class="show-after mb-3" style="display:none;">
+        <div class="show-after mb-3 hidden fade-out">
             <h2 class="mt-0  text-white">Grazie per la conferma</h2>
             <h3 class="text-white">Il team di Ardian ti augura buone feste.<br>
                 ci vediamo l'anno prossimo </h3>

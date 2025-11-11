@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://use.typekit.net/ftz7chg.css");
 body,
 p,
@@ -336,6 +337,28 @@ body {
 .elementor-kit-10 input[type=submit],
 .elementor-kit-10 .elementor-button {
   color: white !important;
+}
+
+/* Stati base */
+.block, .wpcf7, .save-date, .show-after {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-out: opacità a 0 */
+.fade-out {
+  opacity: 0 !important;
+}
+
+/* Fade-in: parte da opacità 0 e diventa visibile */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Nascondi del tutto quando finita la transizione */
+.hidden {
+  display: none;
 }
 
 @media screen and (max-width: 1000px) {
