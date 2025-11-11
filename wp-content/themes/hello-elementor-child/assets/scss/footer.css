@@ -41,4 +41,7 @@
   .site-footer {
     padding: 20px 10px 40px 10px !important;
   }
+  .site-footer a {
+    word-wrap: break-word;
+  }
 }/*# sourceMappingURL=footer.css.map */

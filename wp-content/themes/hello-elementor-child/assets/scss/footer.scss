@@ -43,7 +43,12 @@
 }
 @media screen and (max-width: 768px) {
     .site-footer {
-        padding: 20px 10px 40px 10px !important
+        padding: 20px 10px 40px 10px !important;
+        
+        a{
+            word-wrap: break-word;
+        }
+
 
     }
 }
