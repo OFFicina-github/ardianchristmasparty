@@ -23,10 +23,10 @@ jobs:
       - name: Deploy to Plesk
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.PLESK_HOST }}
-          username: ${{ secrets.PLESK_USER }}
-          password: ${{ secrets.PLESK_PASS }}
+          server: ${{ inputs.environment == 'staging' && secrets.PLESK_HOST || secrets.PLESK_HOST_PROD }}
+          username: ${{ inputs.environment == 'staging' && secrets.PLESK_USER || secrets.PLESK_USER_PROD }}
+          password: ${{ inputs.environment == 'staging' && secrets.PLESK_PASS || secrets.PLESK_PASS_PROD }}
           port: 22
           local_path: ./wp-content/themes/hello-elementor-child/*
-          remote_path: ${{ inputs.environment == 'staging' && '/var/www/vhosts/offdevelop.it/httpdocs/ardianchristmasparty/wp-content/themes/hello-elementor-child/' || '/var/www/vhosts/offdevelop.it/httpdocs/ardianchristmasparty/wp-content/themes/hello-elementor-child/' }}
+          remote_path: ${{ inputs.environment == 'staging' && secrets.REMOTE_PATH || secrets.REMOTE_PATH_PROD }}
           delete_remote_files: false
