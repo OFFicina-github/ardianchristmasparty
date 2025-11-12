@@ -104,7 +104,7 @@ $footer_nav_menu = wp_nav_menu($menu_args);
 				<div class="col-12 col-md-7">
 					<p class="small mb-2">Info</p>
 					<p class="small mb-0">
-						<a href="mailto:ardianchristmascocktail@nextgroup.eu" style="text-decoration: underline;"
+						<a class="salve" href="mailto:ardianchristmascocktail@nextgroup.eu" style="text-decoration: underline;"
 							target="_blank">ardianchristmascocktail@nextgroup.eu</a>
 					</p>
 				</div>
