@@ -163,7 +163,7 @@ function shortcode_iscrizione_evento_non_partecipa()
         <?php echo do_shortcode('[contact-form-7 id="747" title="Modulo NON Partecipa"]'); ?>
 
         <div class="show-after mb-3 hidden fade-out">
-            <h2 class="text-white">Il Team Ardian Real Estate le augura Buone Feste.</h2>
+            <h2 class="text-white">Il Team Ardian Real Estate </br>le augura Buone Feste.</h2>
         </div>
     </div>
     <?php
