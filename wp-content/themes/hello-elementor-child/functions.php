@@ -138,14 +138,14 @@ function shortcode_iscrizione_evento()
                 <a class="btn btn-primary"
                     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Christmas+Cocktail&dates=20251215T183000/20251215T223000&details=Ti+aspettiamo+al+Christmas+Cocktail%21&location=Galleria+de+Cristoforis%2C+1+-+Milano"
                     target="_blank">
-                    AGGIUNGI A GOOGLE CALENDAR
+                    AGGIUNGERE A GOOGLE CALENDAR
                 </a>
 
                 <!-- Pulsante file .ICS -->
                 <a class="btn btn-primary"
                     href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//OFF//IT%0ABEGIN:VEVENT%0AUID:20251215T183000-christmascocktail@offitaly.it%0ADTSTAMP:20251215T183000%0ADTSTART:20251215T183000%0ADTEND:20251215T223000%0ASUMMARY:Christmas+Cocktail%0ADESCRIPTION:Ti+aspettiamo+al+Christmas+Cocktail%21%0ALOCATION:Galleria+de+Cristoforis%2C+1+-+Milano%0AEND:VEVENT%0AEND:VCALENDAR"
                     download="christmas-cocktail.ics">
-                    SCARICA FILE .ICS
+                    SCARICARE FILE .ICS
                 </a>
             </div>
         </div>
