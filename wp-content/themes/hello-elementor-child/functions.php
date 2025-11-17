@@ -130,7 +130,7 @@ function shortcode_iscrizione_evento()
 
         <?php echo do_shortcode('[contact-form-7 id="748" title="Modulo Partecipa"]'); ?>
 
-        <div class="save-date mb-4 pb-2 hidden fade-out" >
+        <div class="save-date mb-4 pb-2 hidden fade-out">
             <h2 class="mt-0 mb-4 pb-2 text-white">SAVE THE DATE</h2>
 
             <div class="button-field">
@@ -143,10 +143,11 @@ function shortcode_iscrizione_evento()
 
                 <!-- Pulsante file .ICS -->
                 <a class="btn btn-primary"
-                    href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//OFF//IT%0ABEGIN:VEVENT%0AUID:20251215T183000-christmascocktail@offitaly.it%0ADTSTAMP:20251215T183000%0ADTSTART:20251215T183000%0ADTEND:20251215T223000%0ASUMMARY:Christmas+Cocktail%0ADESCRIPTION:Ti+aspettiamo+al+Christmas+Cocktail%21%0ALOCATION:Galleria+de+Cristoforis%2C+1+-+Milano%0AEND:VEVENT%0AEND:VCALENDAR"
+                    href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//OFF//IT%0ABEGIN:VEVENT%0AUID:20251215T183000-christmascocktail@offitaly.it%0ADTSTAMP:20251215T183000%0ADTSTART:20251215T183000%0ADTEND:20251215T223000%0ASUMMARY:Christmas%20Cocktail%0ADESCRIPTION:La%20aspettiamo%20al%20Christmas%20Cocktail%21%0ALOCATION:Galleria%20de%20Cristoforis%2C%201%20-%20Milano%0AEND:VEVENT%0AEND:VCALENDAR"
                     download="christmas-cocktail.ics">
                     SCARICARE FILE .ICS
                 </a>
+
             </div>
         </div>
     </div>
@@ -174,17 +175,20 @@ add_shortcode('iscrizione_evento_non_partecipa', 'shortcode_iscrizione_evento_no
 
 add_filter('wpcf7_validate_email*', 'controlla_email_gia_inserita', 10, 2);
 
-function controlla_email_gia_inserita($result, $tag) {
+function controlla_email_gia_inserita($result, $tag)
+{
     global $wpdb;
 
     $name = $tag->name; // es. "your-email"
 
     // Recupera il valore inviato
     $submission = WPCF7_Submission::get_instance();
-    if (!$submission) return $result;
+    if (!$submission)
+        return $result;
 
     $data = $submission->get_posted_data();
-    if (!isset($data[$name])) return $result;
+    if (!isset($data[$name]))
+        return $result;
 
     $email = sanitize_email($data[$name]);
     $table_name = $wpdb->prefix . 'iscrizioni_evento';
