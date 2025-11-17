@@ -162,6 +162,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
         const wpcf7 = document.querySelector('.non-partecipo-block .wpcf7');
         const showAfter = document.querySelector('.show-after');
+        
 
         // Mostra wpcf7 per alcuni secondi
         setTimeout(() => {
